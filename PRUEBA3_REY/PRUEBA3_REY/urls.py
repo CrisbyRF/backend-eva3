@@ -16,7 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from Prueba3App import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.iniciar_sesion, name='iniciar_sesion'),
+    path('cerrar-sesion/', views.cerrar_sesion, name='cerrar_sesion'),
+    path('catalogo/', views.catalogo, name='catalogo'),
+    path('productos/agregar/', views.agregar_producto, name='agregar_producto'),
+    path('productos/modificar/<int:id>/', views.modificar_producto, name='modificar_producto'),
+    path('productos/eliminar/<int:id>/', views.eliminar_producto, name='eliminar_producto'),
 ]

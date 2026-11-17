@@ -1,0 +1,4 @@
+logging
+pymysql
+pymysqlclient
+django

@@ -1,0 +1,28 @@
+{% extends 'layout/base.html' %}
+
+{% block titulo %}Eliminar Producto{% endblock %}
+
+{% block contenido %}
+<div class="row justify-content-center">
+    <div class="col-12 col-md-7 col-lg-5">
+        <div class="card bg-white border shadow-sm rounded-4">
+            <div class="card-body p-4 p-sm-5 text-center">
+                <h1 class="h4 fw-semibold text-dark mb-2">Eliminar producto</h1>
+                <p class="small text-secondary mb-4">
+                    ¿Confirmas que deseas eliminar <strong class="text-dark">{{ producto.nombre }}</strong> (ID #{{ producto.id }}) de la categoría <strong class="text-dark">{{ producto.categoria }}</strong>?
+                </p>
+
+                <form method="POST" class="d-flex justify-content-center gap-2">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger fw-medium px-4">
+                        Confirmar eliminación
+                    </button>
+                    <a href="{% url 'catalogo' %}" class="btn btn-outline-secondary px-4">
+                        Cancelar
+                    </a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
