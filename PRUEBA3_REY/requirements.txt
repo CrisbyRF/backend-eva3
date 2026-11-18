@@ -1,4 +1,0 @@
-logging
-pymysql
-pymysqlclient
-django

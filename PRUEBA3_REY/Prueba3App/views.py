@@ -13,7 +13,6 @@ from .models import Producto, RegistroAcceso
 
 registrador = logging.getLogger(__name__)
 
-
 @sensitive_post_parameters('contrasena')
 @never_cache
 @require_http_methods(['GET', 'POST'])
